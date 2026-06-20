@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+# 🎓 Gestion des Étudiants — Frontend (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Interface web pour la gestion des étudiants, bulletins, matières et examens — connectée à l'API Spring Boot.
 
-## Available Scripts
+## 📋 Sommaire
 
-In the project directory, you can run:
+- Technologies utilisées
+- Prérequis
+- Installation
+- Lancer le projet
+- Comptes de test
+- Structure du projet
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠 Technologies utilisées
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ Technologie 
 
-### `npm test`
+1. React 18 : Bibliothèque d'interface utilisateur 
+2. React Router : Navigation entre les pages 
+3. Axios : Appels HTTP vers l'API backend 
+4. React Toastify : Notifications visuelles 
+5. jsPDF + html2canvas : Génération de bulletins en PDF 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ✅ Prérequis
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Node.js (version 18 ou plus) → [Télécharger ici](https://nodejs.org/)
+2. Le backend Spring Boot doit être démarré (voir [gestion-etudiants-backend](https://github.com/dmmouctar/gestion-etudiants-backend))
+3. Un éditeur de code, (VS Code) -> (https://code.visualstudio.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Pour vérifier que Node.js est installé :
+```bash
+node -v
+npm -v
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📥 Installation pas à pas
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Cloner le projet
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/dmmouctar/gestion-etudiants-frontend.git
+cd gestion-etudiants-frontend
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Installer les dépendances
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+### 3. Vérifier la configuration de l'API
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Le fichier `src/api/axios.js` pointe par défaut vers :
+```js
+baseURL: 'http://localhost:8080/api'
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Si votre backend tourne sur une autre adresse, modifiez cette ligne.
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ▶️ Lancer le projet
 
-### Analyzing the Bundle Size
+⚠️ **Le backend Spring Boot doit déjà être démarré** avant de lancer le frontend (voir le [README du backend](https://github.com/dmmouctar/gestion-etudiants-backend)).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Dans le terminal, à la racine du projet :
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Le projet s'ouvre automatiquement sur (http://localhost:3000)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🔑 Comptes de test
 
-### Deployment
+**Administrateur :**
+1. Email : admin@school.ma 
+2. Mot de passe : Admin@1234
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+**Étudiant** (créé via l'interface admin après le premier lancement) :
+> Connectez-vous en admin → Étudiants → Nouvel étudiant → renseignez un email + mot de passe de compte → utilisez ces identifiants pour tester le rôle étudiant.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 📁 Structure du projet
+
+```
+src/
+├── api/              → Fonctions d'appel à l'API (axios)
+├── context/          → Gestion de l'authentification (AuthContext)
+├── components/       → Composants réutilisables (Sidebar, Navbar, Spinner...)
+├── pages/
+│   ├── auth/         → Page de connexion
+│   ├── admin/        → Toutes les pages de l'administrateur
+│   └── etudiant/     → Toutes les pages de l'étudiant
+└── styles/           → CSS global (responsive inclus)
+```
+
+---
+
+## 📱 Fonctionnalités principales
+
+- ✅ Authentification sécurisée (JWT) avec rôles ADMIN / ÉTUDIANT
+- ✅ Gestion complète des étudiants, filières, matières, examens
+- ✅ Saisie des notes et calcul automatique des moyennes pondérées
+- ✅ Génération et validation des bulletins
+- ✅ **Impression des bulletins en PDF**
+- ✅ **Photo de profil personnalisée** par utilisateur
+- ✅ Interface **responsive** (mobile, tablette, desktop)
+
+---
+
+## 🔗 Projets liés
+
+- Backend Spring Boot : [gestion-etudiants-backend](https://github.com/dmmouctar/gestion-etudiants-backend)
+- Base de données : [gestion-etudiants-database](https://github.com/dmmouctar/gestion-etudiants-database)
+
+---
+
+## 👤 Auteur
+
+**Mamadou Mouctar Diallo**
