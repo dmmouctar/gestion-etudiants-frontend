@@ -32,11 +32,11 @@ img { max-width: 100%; }
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;   /* ← CORRECTION : le scroll se fait ici, pas sur page-content */
+  overflow-y: auto;   /* le scroll se fait ici, pas sur page-content */
   overflow-x: hidden;
   min-width: 0;
   width: 100%;
-  height: 100vh;       /* ← CORRECTION : nécessaire pour que sticky fonctionne */
+  height: 100vh;       /* nécessaire pour que sticky fonctionne */
 }
 
 .page-content {

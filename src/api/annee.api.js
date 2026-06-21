@@ -7,5 +7,4 @@ export const modifierAnnee  = (id, data)=> api.put(`/admin/annees/${id}`, data);
 export const supprimerAnnee = (id)      => api.delete(`/admin/annees/${id}`);
 
 // Route accessible par ADMIN et ETUDIANT
-// ← utilise /api/annees sans "admin"
 export const getAnnees = () => api.get('/annees');

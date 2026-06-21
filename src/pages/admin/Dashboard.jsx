@@ -15,7 +15,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchStats = async () => {
-      // On utilise Promise.allSettled au lieu de Promise.all
+      // On utilise Promise.all
       // pour que si une requête échoue, les autres continuent
       const [etudiants, filieres, matieres, examens] = await Promise.allSettled([
         getEtudiants(),

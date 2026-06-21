@@ -48,7 +48,7 @@ const BulletinDetail = () => {
     catch { toast.error('Erreur'); }
   };
 
-  // ── Impression PDF ──────────────────────────────────────────────
+  // ── Impression PDF ───────────────────────────
   const handlePrint = async () => {
     if (!bulletinRef.current) return;
     setPrinting(true);
@@ -84,7 +84,7 @@ const BulletinDetail = () => {
         <Navbar title="Détail du Bulletin" />
         <div className="page-content">
 
-          {/* Boutons d'action HORS zone PDF */}
+          {/* Boutons d'action */}
           <div style={{ display:'flex', gap:'10px', marginBottom:'16px', flexWrap:'wrap' }}>
             <button className="btn btn-secondary btn-sm"
               onClick={() => navigate('/admin/bulletins')}>

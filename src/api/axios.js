@@ -7,7 +7,7 @@ const api = axios.create({
     },
 });
 
-// Intercepteur REQUETE(ajoute le token JWT uniquement)
+// Intercepteur REQUETE(ajoute du token JWT uniquement)
 api.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('token');
@@ -19,7 +19,7 @@ api.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
-// Intercepteur reponse (redirige si le token expire)
+// Intercepteur reponse (redirection si le token expire)
 api.interceptors.response.use(
     (response) => response,
     (error) => {

@@ -49,7 +49,7 @@ const Navbar = ({ title }) => {
   };
 
   return (
-    // ← CORRECTION : sticky top:0 pour rester visible au scroll
+    // sticky top:0 pour rester visible au scroll
     <header className="navbar-sticky" style={{
       height: '64px', background: 'white',
       borderBottom: '1px solid #e2e8f0',
@@ -154,7 +154,7 @@ const Navbar = ({ title }) => {
               </div>
 
               <div style={{ padding: '8px' }}>
-                <MenuItem icon="👤" label="Voir mon profil" onClick={goToProfil} />
+                <MenuItem icon="👤" label="Mon profil" onClick={goToProfil} />
                 <MenuItem icon="📷" label="Changer la photo" onClick={handlePhotoClick} />
                 <div style={{ borderTop: '1px solid #f1f5f9', margin: '4px 0' }} />
                 <MenuItem icon="🚪" label="Déconnexion" onClick={logout} danger />
