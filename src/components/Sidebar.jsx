@@ -46,7 +46,7 @@ const Sidebar = () => {
       />
 
       <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
-        {/* En-tête : logo + bouton fermer sur sa propre ligne */}
+        {/* En-tête : logo + bouton fermer  */}
         <div style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
           {/* Ligne du bouton fermer — mobile uniquement, via CSS */}
           <div className="sidebar-close-row">

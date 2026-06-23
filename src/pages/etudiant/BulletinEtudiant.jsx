@@ -110,14 +110,14 @@ const BulletinEtudiant = () => {
  
           {!loading && bulletin && (
             // Zone à capturer pour le PDF
-            <div ref={bulletinRef} style={{ maxWidth: '700px', background: 'white', padding: '8px' }}>
+            <div ref={bulletinRef} style={{ maxWidth: '800px', background: 'white', padding: '8px' }}>
  
               {/* En-tête du bulletin */}
-              <div className="card" style={{ marginBottom: '16px' }}>
+              <div className="card" style={{ marginBottom: '14px' }}>
                 {/* Logo école */}
                 <div style={{
-                  textAlign: 'center', marginBottom: '20px',
-                  paddingBottom: '16px', borderBottom: '2px solid #1e3a5f'
+                  textAlign: 'center', marginBottom: '18px',
+                  paddingBottom: '14px', borderBottom: '2px solid #1e3a5f'
                 }}>
                   <h2 style={{
                     fontSize: '20px', fontWeight: '800',
@@ -135,7 +135,7 @@ const BulletinEtudiant = () => {
                     <table style={{ fontSize: '14px', borderCollapse: 'separate', borderSpacing: '0 4px' }}>
                       <tbody>
                         <tr>
-                          <td style={{ color: '#64748b', paddingRight: '16px', fontWeight: '600' }}>Étudiant :</td>
+                          <td style={{ color: '#64748b', paddingRight: '14px', fontWeight: '600' }}>Étudiant :</td>
                           <td style={{ fontWeight: '700', color: '#1e293b' }}>
                             {bulletin.etudiantPrenom} {bulletin.etudiantNom}
                           </td>
@@ -165,7 +165,7 @@ const BulletinEtudiant = () => {
                     textAlign: 'center',
                     background: '#f8fafc',
                     borderRadius: '12px',
-                    padding: '16px 24px',
+                    padding: '14px 20px',
                     border: `2px solid ${mention.color}`
                   }}>
                     <div style={{
@@ -251,7 +251,7 @@ const BulletinEtudiant = () => {
               </div>
  
               {/* Pied de page */}
-              <div style={{ marginTop: '16px', padding: '12px 16px', background: '#f8fafc', borderRadius: '8px', textAlign: 'right', paddingTop: '300px' }}>
+              <div style={{ marginTop: '16px', padding: '12px 16px', background: '#f8fafc', borderRadius: '8px', textAlign: 'right'}}>
                 <p style={{ margin: 0, fontSize: '14px', color: '#94a3b8' }}>
                    {new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: 'long', year: 'numeric' })}
                 </p>

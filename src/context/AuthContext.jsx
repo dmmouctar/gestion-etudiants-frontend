@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
     if (savedToken && savedUser) {
       setToken(savedToken);
       setUser(JSON.parse(savedUser));
-      // Recharger les infos depuis le serveur (incluant photoUrl)
+      // Recharger les infos depuis le serveur
       fetchUserInfo(savedToken);
     } else {
       setLoading(false);

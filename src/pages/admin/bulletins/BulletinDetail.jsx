@@ -102,7 +102,7 @@ const BulletinDetail = () => {
           </div>
 
           {/* Zone capturée pour le PDF */}
-          <div ref={bulletinRef} style={{ maxWidth:'700px', background:'white', padding:'8px' }}>
+          <div ref={bulletinRef} style={{ maxWidth:'800px', background:'white', padding:'8px' }}>
 
             {/* En-tête */}
             <div className="card" style={{ marginBottom:'16px' }}>
@@ -119,10 +119,10 @@ const BulletinDetail = () => {
               </div>
 
               <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start' }}>
-                <table style={{ fontSize:'14px', borderCollapse:'separate', borderSpacing:'0 4px' }}>
+                <table style={{ fontSize:'15px', borderCollapse:'separate', borderSpacing:'0 4px' }}>
                   <tbody>
                     <tr>
-                      <td style={{ color:'#64748b', paddingRight:'16px', fontWeight:'600' }}>Étudiant :</td>
+                      <td style={{ color:'#64748b', paddingRight:'80px', fontWeight:'600' }}>Étudiant :</td>
                       <td style={{ fontWeight:'700', color:'#1e293b' }}>
                         {bulletin.etudiantPrenom} {bulletin.etudiantNom}
                       </td>
@@ -148,19 +148,19 @@ const BulletinDetail = () => {
 
                 <div style={{
                   textAlign:'center', background:'#f8fafc',
-                  borderRadius:'12px', padding:'16px 24px',
+                  borderRadius:'20px', padding:'12px 20px',
                   border:`2px solid ${mention.color}`
                 }}>
                   <div style={{ fontSize:'36px', fontWeight:'800', color:mention.color, lineHeight:1 }}>
                     {bulletin.moyenneGenerale ?? '—'}
                   </div>
-                  <div style={{ fontSize:'13px', color:'#64748b', margin:'4px 0' }}>/20</div>
+                  <div style={{ fontSize:'14px', color:'#64748b', margin:'4px 0' }}>/20</div>
                   <div style={{ fontSize:'13px', fontWeight:'700', color:mention.color }}>
                     {mention.label}
                   </div>
-                  <div style={{ marginTop:'8px' }}>
+                  <div style={{ marginTop:'6px' }}>
                     <span style={{
-                      fontSize:'11px', padding:'2px 8px', borderRadius:'12px', fontWeight:'600',
+                      fontSize:'14px', padding:'2px 8px', borderRadius:'12px', fontWeight:'600',
                       background: bulletin.estValide ? '#dcfce7' : '#fef3c7',
                       color: bulletin.estValide ? '#16a34a' : '#d97706'
                     }}>
@@ -181,14 +181,14 @@ const BulletinDetail = () => {
                   📚 Détail des notes par matière
                 </h3>
               </div>
-              <table style={{ width:'100%', borderCollapse:'collapse', fontSize:'14px' }}>
+              <table style={{ width:'99%', borderCollapse:'collapse', fontSize:'14px' }}>
                 <thead style={{ background:'#f8fafc' }}>
                   <tr>
                     {['Matière','Coefficient','Moyenne','Moy. pondérée','Mention'].map(h => (
                       <th key={h} style={{
-                        padding:'10px 16px', textAlign: h === 'Matière' ? 'left' : 'center',
-                        color:'#475569', fontWeight:'600', fontSize:'13px',
-                        borderBottom:'1px solid #e2e8f0'
+                        padding:'16px 10px', textAlign: h === 'Matière' ? 'left' : 'center',
+                        color:'#475569', fontWeight:'600', fontSize:'14px',
+                        borderBottom:'2px solid #e2e8f0'
                       }}>{h}</th>
                     ))}
                   </tr>
@@ -227,7 +227,7 @@ const BulletinDetail = () => {
                     <td style={{ padding:'12px 16px', textAlign:'center', fontWeight:'800', color:'white', fontSize:'16px' }}>
                       {bulletin.moyenneGenerale ?? '—'}/20
                     </td>
-                    <td colSpan="2" style={{ padding:'12px 16px', textAlign:'center', fontWeight:'700', color:'#fbbf24', fontSize:'14px' }}>
+                    <td colSpan="2" style={{ padding:'12px 44px', textAlign:'right', fontWeight:'700', color:'#fbbf24', fontSize:'14px' }}>
                       {mention.label}
                     </td>
                   </tr>
@@ -237,8 +237,8 @@ const BulletinDetail = () => {
 
             {/* Pied de page */}
             <div style={{
-              marginTop:'16px', padding:'12px 16px',
-              background:'#f8fafc', borderRadius:'8px', textAlign:'right', paddingTop: '180px'
+              marginTop:'16px', padding:'12px 10px',
+              background:'#f8fafc', borderRadius:'8px', textAlign:'right'
             }}>
               <p style={{ margin:0, fontSize:'14px', color:'#94a3b8' }}>
                 {' '}
