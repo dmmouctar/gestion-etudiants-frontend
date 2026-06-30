@@ -5,3 +5,5 @@ export const creerExamen = (data) => api.post("/admin/examens", data);
 export const modifierExamen = (id, data) =>
   api.put(`/admin/examens/${id}`, data);
 export const supprimerExamen = (id) => api.delete(`/admin/examens/${id}`);
+export const getExamensEtudiant = (params) => api.get('/examens', { params });
+

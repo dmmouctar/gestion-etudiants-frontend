@@ -23,6 +23,7 @@ const Sidebar = () => {
   const etudiantLinks = [
     { to: '/etudiant/dashboard', label: '🏠 Accueil' },
     { to: '/etudiant/profil',    label: '👤 Mon Profil' },
+    { to: '/etudiant/matieres',  label: '📚 Mes Matières' },
     { to: '/etudiant/bulletins', label: '📊 Bulletins' },
   ];
 

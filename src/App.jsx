@@ -28,6 +28,7 @@ import DashboardEtudiant from './pages/etudiant/DashboardEtudiant';
 import ProfilEtudiant from './pages/etudiant/ProfilEtudiant';
 import BulletinEtudiant from './pages/etudiant/BulletinEtudiant';
 import HistoriqueBulletins from './pages/etudiant/HistoriqueBulletins';
+import MatieresEtudiant from './pages/etudiant/MatieresEtudiant';
 
 function App(){
     return(
@@ -98,6 +99,11 @@ function App(){
                 <Route path="/etudiant/profil" element={
                     <PrivateRoute role ="ETUDIANT"><ProfilEtudiant /></PrivateRoute>
                 } />
+
+                 <Route path="/etudiant/matieres" element={
+                    <PrivateRoute role="ETUDIANT"><MatieresEtudiant /></PrivateRoute>
+                } />
+
 
                 <Route path="/etudiant/bulletins" element={
                     <PrivateRoute role ="ETUDIANT"><BulletinEtudiant /></PrivateRoute>
